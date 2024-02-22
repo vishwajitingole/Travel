@@ -55,9 +55,9 @@ cd travel-app
     <p>The app will be accessible at <code>http://localhost:your_port</code>.</p>
     <h2 id="api-documentation">API Documentation</h2>
     <p>Explore the API endpoints and learn how to interact with our backend. Check out our <a
-            href="https://vishwakaahotel.cyclic.app/api/">API Documentation</a> for details.</p>
+            href="https://vishwakaahotel.cyclic.app/api/hotels">API Documentation</a> for details.</p>
     <h2 id="deployment">Deployment</h2>
-    <p>The app is deployed and accessible at <a href="https://vishwakaahotel.cyclic.app/">Vishwaka  Hotel</a>. Feel free
+    <p>The app is deployed and accessible at <a href="https://vishwakaahotel.cyclic.app/api/hotels">Vishwaka  Hotel</a>. Feel free
         to explore and start your travel journey!</p>
     <h2 id="contributing">Contributing</h2>
     <p>We welcome contributions from the community! If you find a bug or have a feature request, please open an
