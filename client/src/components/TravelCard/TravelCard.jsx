@@ -4,11 +4,11 @@ function TravelCard({ props }) {
   const { image, name, price, address, rating, _id } = props;
   return (
     <Link className="" to={`/${_id}`}>
-      <div className="shadow-[2px_5px_7px_2px] object-fit relative  shadow-[#707070] cursor-pointer hotelcard-container w-[14rem] mt-3 ml-5  rounded-[4px] bg-[#fafafa] ">
+      <div className="shadow-[2px_5px_7px_2px]   relative w-16  md:w-32 lg:w-48   shadow-[#707070] cursor-pointer hotelcard-container w-[14rem]  mt-3 ml-5  rounded-[4px] bg-[#fafafa] ">
         <img
           src={image}
           alt="hotelcard"
-          className="img w-[100%] h-[15rem] object-cover rounded-[4px] "
+          className="img w-[100%] object-fit sm:h-[10rem] h-[15rem] object-cover rounded-[4px] "
         />
         <div className="hotelcard-details text-[#363030] p-[8px]">
           <div className="flex items-center">
