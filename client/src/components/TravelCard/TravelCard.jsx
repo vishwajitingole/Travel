@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function TravelCard({ props }) {
-  const { image, name, price, address, rating } = props;
+  const { image, name, price, address, rating, _id } = props;
   return (
-    <div className="">
-      <div className="shadow-[2px_5px_7px_2px] relative  shadow-[#707070] cursor-pointer hotelcard-container w-[14rem] mt-3 ml-5  rounded-[4px] bg-[#fafafa] ">
+    <Link className="" to={`/${_id}`}>
+      <div className="shadow-[2px_5px_7px_2px] object-fit relative  shadow-[#707070] cursor-pointer hotelcard-container w-[14rem] mt-3 ml-5  rounded-[4px] bg-[#fafafa] ">
         <img
           src={image}
           alt="hotelcard"
@@ -34,7 +36,7 @@ function TravelCard({ props }) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

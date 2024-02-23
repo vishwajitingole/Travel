@@ -1,9 +1,14 @@
 import Home from "./pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
+import Hotel from "./pages/Hotel/Hotel";
 
 function App() {
   return (
     <div className="cursor-fancy">
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path=":id" element={<Hotel />} />
+      </Routes>
     </div>
   );
 }

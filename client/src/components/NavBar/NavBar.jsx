@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-function NavBar({ hotel }) {
+function NavBar() {
   return (
     <div className="">
       <header className="flex justify-between items-center p-3 border bg-[color:#fafafa]  border-[color:#d2d2d2]  heading">
