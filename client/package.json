@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@react-hook/mouse-position": "^4.1.3",
+    "axios": "^1.6.7",
     "framer-motion": "^11.0.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
