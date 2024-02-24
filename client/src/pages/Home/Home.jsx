@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import NavBar from "../../components/NavBar/NavBar";
 import TravelCard from "../../components/TravelCard/TravelCard";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
+import NavBar from "../../components/NavBar/NavBar";
+import MidSection from "../../components/NavBar/MidSection";
+import Cagtegories from "../../components/Categories/Cagtegories";
 
 function Home() {
   const [hotel, setHotel] = useState([]);
@@ -17,9 +19,10 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col w-screen h-screen">
       <NavBar />
-      <main className="main flex flex-wrap p-[4rem_3rem_2rem_3rem]">
+      <Cagtegories />
+      <main className="flex lg:mt-[10vh] xl:mt-[18vh] sm:mt-[10vh] xs:mt-[10vh] xl:mt-[10vh]  flex-wrap justify-center main items-cetner mt-[20px]">
         <AnimatePresence>
           {hotel.map((e, index) => (
             <motion.div

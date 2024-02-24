@@ -16,9 +16,25 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--background-color);
-  cursor: none;
 }
 
 .cursor-fancy {
-  cursor: url(/client/public/airplane.png), pointer;
+  cursor: url("./../public/airplane.png");
+}
+
+* {
+  scrollbar-width: thin;
+  /* For Firefox */
+}
+
+*::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Style the WebKit scrollbar thumb */
+
+*::-webkit-scrollbar-thumb {
+  width: 1px;
+  height: 1px;
+  color: #ff6525;
 }
