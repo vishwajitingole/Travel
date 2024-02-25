@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 function Categories() {
   const [cat, setCat] = useState(null);
@@ -14,18 +15,20 @@ function Categories() {
   }, []);
 
   return (
-    <div className=" lg:mt-[8vh] sm:mt-[8vh]  xs:mt-[8vh] xl:mt-[12vh] w-[100vw] ">
-      <div className="flex  p-[2rem_2rem_0rem_2rem]  fixed z-10 items-center gap-1 cursor-pointer ">
+    <div className="lg:mt-[8vh] sm:mt-[8vh] xs:mt-[8vh] xl:mt-[12vh] w-[100vw]">
+      <motion.div className="flex p-[2rem_2rem_0rem_2rem] fixed z-10 items-center gap-1 cursor-pointer">
         {cat &&
           cat.map((e) => (
-            <span
+            <motion.span
+              animate={{ rotate: [10, -10, 0] }}
+              transition={{ duration: 2 }} // Add loop attribute
               key={e._id}
               className="flex items-center justify-center p-3 text-center border rounded-full bg-zinc-200"
             >
               {e.category}
-            </span>
+            </motion.span>
           ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
