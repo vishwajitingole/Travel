@@ -9,9 +9,7 @@ function Hotel() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(
-          "https://vishwakaahotel.cyclic.app/api/hotels"
-        );
+        const response = await axios.get("http://localhost:2000/api/hotels");
         const hotelsData = response.data;
         const selectedHotel = hotelsData.find((res) => res._id === id);
 
@@ -22,6 +20,7 @@ function Hotel() {
     }
 
     fetchData();
+    console.log(hotel);
   }, [id]);
 
   return (

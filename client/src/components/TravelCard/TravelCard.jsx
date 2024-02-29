@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 function TravelCard({ props }) {
   const { image, name, price, address, rating, _id } = props;
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center ">
       <Link className="" to={`/${_id}`}>
-        <div className="shadow-[2px_5px_7px_2px] relative md:w-32 lg:w-48   shadow-[#707070] cursor-pointer hotelcard-container w-[14rem]  mt-3 ml-5  rounded-[4px] bg-[#fafafa] ">
+        <div className="shadow-[2px_5px_7px_2px]  relative md:w-35 lg:w-48   shadow-[#707070] cursor-pointer hotelcard-container w-[14rem]  mt-3 ml-5  rounded-[4px] bg-[#fafafa] ">
           <img
             src={image}
             alt="hotelcard"
-            className="img w-[100%]  sm:h-[10rem] h-[15rem] object-fit rounded-[4px] "
+            className="img w-[100%] xs:h-[9rem]   sm:h-[10rem] h-[15rem] object-fit rounded-[4px] "
           />
           <div className="hotelcard-details text-[#363030] p-[8px]">
             <div className="flex items-center">

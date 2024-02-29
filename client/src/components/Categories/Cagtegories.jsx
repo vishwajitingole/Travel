@@ -1,34 +1,65 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useCategory } from "../../context/category_context";
+import "./Categories.css";
 
 function Categories() {
   const [cat, setCat] = useState(null);
+  const [numofCat, setNumOfCat] = useState(0);
+  const { hotelCategory, setHotelCategory } = useCategory();
+
+  function rclick() {
+    setNumOfCat(numofCat + 10);
+  }
+  function lclick() {
+    setNumOfCat(numofCat - 10);
+  }
 
   useEffect(() => {
     axios
-      .get("https://vishwakaahotel.cyclic.app/api/category")
+
+      .get("http://localhost:2000/api/category")
       .then((res) => {
-        setCat(res.data);
+        const data = res.data;
+        const categoriesToShow = data.slice(numofCat, numofCat + 10);
+        setCat(categoriesToShow);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [numofCat]);
+
+  function handleCat(category) {
+    setHotelCategory(category);
+  }
 
   return (
-    <div className="lg:mt-[8vh] sm:mt-[8vh] xs:mt-[8vh] xl:mt-[12vh] w-[100vw]">
-      <motion.div className="flex p-[2rem_2rem_0rem_2rem] fixed z-10 items-center gap-1 cursor-pointer">
-        {cat &&
-          cat.map((e) => (
-            <motion.span
-              animate={{ rotate: [10, -10, 0] }}
-              transition={{ duration: 2 }} // Add loop attribute
-              key={e._id}
-              className="flex items-center justify-center p-3 text-center border rounded-full bg-zinc-200"
-            >
-              {e.category}
-            </motion.span>
-          ))}
-      </motion.div>
+    <div className="lg:mt-[8vh] sm:mt-[8vh] overflow-auto xs:mt-[9vh] xl:mt-[10vh] xl:mb-[3vh] w-[100vw]">
+      {cat && (
+        <motion.div className="flex p-[2rem_2rem_0rem_2rem] fixed z-10 items-center gap-1 cursor-pointer">
+          <button onClick={lclick}>
+            <i className="text-2xl rounded-xl border-black border-[2px] p-1 bg-slate-200 ri-arrow-left-line"></i>
+          </button>
+
+          {cat &&
+            cat.map(({ _id, category }) => (
+              <motion.span
+                animate={{ rotate: [0, 10, -10, 0, 10, 0, -10, 0] }}
+                transition={{ duration: 1.4, delay: 4 }}
+                key={_id}
+                onClick={() => handleCat(category)}
+                className={`flex items-center ${
+                  category == hotelCategory ? "border-bottom" : ""
+                } justify-center p-2 text-center border rounded-full bg-zinc-200`}
+              >
+                {category}
+              </motion.span>
+            ))}
+
+          <button onClick={rclick}>
+            <i className="text-2xl border-black rounded-xl border-[2px] p-1 bg-slate-200 ri-arrow-right-line"></i>
+          </button>
+        </motion.div>
+      )}
     </div>
   );
 }
