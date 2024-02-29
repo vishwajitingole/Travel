@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+function handleSearch() {}
 
 const MidSection = () => {
   return (
-    <div className="flex items-center justify-center mt-[20px]">
+    <div
+      className="flex items-center justify-center mt-[20px] "
+      onClick={handleSearch}
+    >
       <div className="flex items-center overflow-hidden  shadow-[2px_2px_5px_3px_#d2d2d2] cursor-pointer form-container bg-[color:#fff] h-fit py-1 rounded-lg text-xs px-1 ">
         <motion.span
           animate={{ y: 0 }}

@@ -8,7 +8,7 @@ function App() {
     <div className="cursor-fancy">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path=":id" element={<Hotel />} />
+        <Route path="/hotel/:id/:state" element={<Hotel />} />
       </Routes>
     </div>
   );

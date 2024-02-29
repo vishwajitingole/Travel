@@ -15,10 +15,14 @@ function Home() {
     axios
       .get("http://localhost:2000/api/hotels")
       .then((res) => {
-        const filteredHotels = res.data.filter(
-          (hotel) => hotel.category === hotelCategory
-        );
-        setHotel(filteredHotels);
+        if (hotelCategory) {
+          const filteredHotels = res.data.filter(
+            (hotel) => hotel.category === hotelCategory
+          );
+          setHotel(filteredHotels);
+        }
+
+        setHotel(res.data);
       })
       .catch((err) => console.log(err));
   }, [hotelCategory]);

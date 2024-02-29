@@ -43,8 +43,9 @@ function Categories() {
           {cat &&
             cat.map(({ _id, category }) => (
               <motion.span
-                animate={{ rotate: [0, 10, -10, 0, 10, 0, -10, 0] }}
-                transition={{ duration: 1.4, delay: 4 }}
+                animate={{ x: 0 }}
+                initial={{ x: 20 }}
+                transition={{ duration: 0.4 }}
                 key={_id}
                 onClick={() => handleCat(category)}
                 className={`flex items-center ${
