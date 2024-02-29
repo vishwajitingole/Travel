@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
 import MidSection from "./MidSection";
+import { useAuth } from "../../context/auth_context";
 
 function NavBar() {
+  const { authDispatch } = useAuth();
+  function handleAuthClick() {
+    console.log(authDispatch);
+    authDispatch({
+      type: "SHOW_AUTH_MODAL",
+    });
+  }
   return (
     <div className="fixed z-10 w-full">
       <header className="flex justify-between items-center   border bg-[color:#fafafa]  border-[color:#d2d2d2]  heading w-full">
@@ -20,7 +28,10 @@ function NavBar() {
           <MidSection />
         </div>
 
-        <div className="flex gap-5 border border-solid border-[color:#707070] hover:shadow-lg hover:ring-1 hover:ring-gray-500 rounded-[4px]">
+        <div
+          onClick={handleAuthClick}
+          className="flex gap-5 border border-solid border-[color:#707070] hover:shadow-lg hover:ring-1 hover:ring-gray-500 rounded-[4px]"
+        >
           <div className="flex items-center text-3xl cursor-pointer">
             <i className=" text-[color:#363030] xs:text-[1.2rem] font-[2.5rem] p-1  border border-solid border-[color:#d2d2d2] ri-menu-line"></i>
 

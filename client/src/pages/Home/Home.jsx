@@ -3,13 +3,16 @@ import TravelCard from "../../components/TravelCard/TravelCard";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import NavBar from "../../components/NavBar/NavBar";
+import { useAuth } from "../../context/auth_context";
 
 import Cagtegories from "../../components/Categories/Cagtegories";
 import { useCategory } from "../../context/category_context";
+import AuthModal from "../../components/AuthModal/AuthModal";
 
 function Home() {
   const [hotel, setHotel] = useState([]);
   const { hotelCategory } = useCategory();
+  const { isAuthModalOpen } = useAuth();
 
   useEffect(() => {
     axios
@@ -54,6 +57,7 @@ function Home() {
             ))}
         </AnimatePresence>
       </main>
+      {isAuthModalOpen && <AuthModal />}
     </div>
   );
 }
