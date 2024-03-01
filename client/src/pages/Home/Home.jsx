@@ -57,6 +57,7 @@ function Home() {
             ))}
         </AnimatePresence>
       </main>
+
       {isAuthModalOpen && <AuthModal />}
     </div>
   );

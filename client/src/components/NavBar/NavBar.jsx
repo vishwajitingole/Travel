@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import MidSection from "./MidSection";
+
 import { useAuth } from "../../context/auth_context";
 
 function NavBar() {
@@ -23,10 +23,6 @@ function NavBar() {
             Travel
           </motion.a>
         </motion.h1>
-
-        <div className="hidden md:block">
-          <MidSection />
-        </div>
 
         <div
           onClick={handleAuthClick}

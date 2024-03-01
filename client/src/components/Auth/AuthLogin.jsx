@@ -2,29 +2,36 @@ import "./Auth.css";
 
 function AuthLogin() {
   return (
-    <div>
+    <div className="auth-container">
       <form action="">
-        <div className="flex flex-col">
-          <label htmlFor="">
-            Mobile Number <span>*</span>{" "}
+        <div className="flex flex-col lb-in-container">
+          <label htmlFor="" className="auth-label">
+            Mobile Number <span className="asterisk">*</span>{" "}
           </label>
           <input
             maxLength="10"
             type="number"
+            className="auth-input"
             placeholder="Enter your Mobile Number"
             required
           />
         </div>
-        <div className="flex flex-col">
-          <label htmlFor="">
+        <div className="flex flex-collb-in-container">
+          <label htmlFor="" className="auth-label">
             Password <span>*</span>{" "}
           </label>
-          <input type="password" placeholder="Enter  Password" required />
+
+          <input
+            className="auth-input"
+            type="password"
+            placeholder="Enter  Password"
+            required
+          />
         </div>
-        <div className="">
+        <div className="btn btn-login">
           <button>Login</button>
         </div>
-        <div className="">
+        <div className="button cta btn-outline-primary">
           <button className="cursor-pointer">
             Login with Test Credentials
           </button>
