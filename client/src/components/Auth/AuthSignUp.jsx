@@ -55,7 +55,7 @@ function AuthSignUp() {
             required
           />
         </div>
-        <div className="btn button">
+        <div className="btn bg-[#FF6525] mb-2 text-center rounded text-white cta btn-login">
           <button>Submit</button>
         </div>
       </form>

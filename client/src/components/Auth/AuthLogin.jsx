@@ -16,7 +16,7 @@ function AuthLogin() {
             required
           />
         </div>
-        <div className="flex flex-collb-in-container">
+        <div className="flex flex-col lb-in-container">
           <label htmlFor="" className="auth-label">
             Password <span>*</span>{" "}
           </label>
@@ -28,7 +28,7 @@ function AuthLogin() {
             required
           />
         </div>
-        <div className="btn btn-login">
+        <div className="btn bg-[#FF6525] mb-2 text-center rounded text-white cta btn-login">
           <button>Login</button>
         </div>
         <div className="button cta btn-outline-primary">
