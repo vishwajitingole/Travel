@@ -2,7 +2,7 @@ import "./Auth.css";
 
 function AuthLogin() {
   return (
-    <div className="w-[30vw] auth-container">
+    <div className="auth-container">
       <form action="">
         <div className="flex flex-col lb-in-container">
           <label htmlFor="" className="auth-label">
@@ -16,7 +16,7 @@ function AuthLogin() {
             required
           />
         </div>
-        <div className="flex flex-col lb-in-container">
+        <div className="flex flex-collb-in-container">
           <label htmlFor="" className="auth-label">
             Password <span>*</span>{" "}
           </label>
@@ -28,7 +28,7 @@ function AuthLogin() {
             required
           />
         </div>
-        <div className="btn bg-[#FF6525] mb-2 text-center rounded text-white cta btn-login">
+        <div className="btn btn-login">
           <button>Login</button>
         </div>
         <div className="button cta btn-outline-primary">

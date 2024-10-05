@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useCategory } from "../../context/category_context";
 import "./Categories.css";
-import { useSelector } from "react-redux";
 
-function Categories({ setHotel }) {
+function Categories() {
   const [cat, setCat] = useState(null);
   const [numofCat, setNumOfCat] = useState(0);
-  const hotelCategory = useSelector((e) => e.category.category);
+  const { hotelCategory, setHotelCategory } = useCategory();
 
   function rclick() {
     setNumOfCat(numofCat + 10);
@@ -28,8 +28,8 @@ function Categories({ setHotel }) {
       .catch((err) => console.log(err));
   }, [numofCat]);
 
-  function handleCat(cat) {
-    setHotel(cat);
+  function handleCat(category) {
+    setHotelCategory(category);
   }
 
   return (

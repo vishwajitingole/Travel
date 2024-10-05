@@ -13,7 +13,7 @@
   opacity: 1;
 }
 
-.button .btn-auth {
+.button.btn-auth {
   border-radius: 0;
   font-size: 1.5rem;
   font-weight: normal;
@@ -21,17 +21,17 @@
   color: var(--text-color-primary);
 }
 
-.button .btn-auth-selected {
+.button.btn-auth-selected {
   background-color: var(--primary-color);
   color: var(--background-color);
 }
 
-.button .btn-close {
+.button.btn-close {
   height: 2rem;
   width: 2rem;
 }
 
-.button .btn-close:hover {
+.button.btn-close:hover {
   border-radius: 50%;
   background-color: var(--accent-color);
 }

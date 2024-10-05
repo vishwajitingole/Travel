@@ -4,20 +4,20 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import auth_slice from "./slice/auth_slice.js";
-import category_slice from "./slice/category_slice.js";
+import authSlice from "./slice/auth_slice.js";
+import categorySlice from "./slice/category_slice.js";
 
 const store = configureStore({
-    reducer: {
-        auth: auth_slice,
-        category: category_slice,
-    },
+  reducer: {
+    auth: authSlice,
+    category: categorySlice,
+  },
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </Provider>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );

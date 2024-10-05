@@ -3,14 +3,16 @@ import TravelCard from "../../components/TravelCard/TravelCard";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import NavBar from "../../components/NavBar/NavBar";
+import { useAuth } from "../../context/auth_context";
+
 import Cagtegories from "../../components/Categories/Cagtegories";
+import { useCategory } from "../../context/category_context";
 import AuthModal from "../../components/AuthModal/AuthModal";
-import { useSelector } from "react-redux";
 
 function Home() {
   const [hotel, setHotel] = useState([]);
-  const hotelCategory = useSelector((e) => e.category);
-  const isAuthModalOpen = useSelector((e) => e.auth.isAuthModalOpen);
+  const { hotelCategory } = useCategory();
+  const { isAuthModalOpen } = useAuth();
 
   useEffect(() => {
     axios
@@ -31,7 +33,7 @@ function Home() {
   return (
     <div className="flex flex-col w-screen h-screen">
       <NavBar />
-      <Cagtegories props={setHotel} />
+      <Cagtegories />
       <main className="flex lg:mt-[10vh]  xs:h-[2vh] sm:mt-[8vh] xs:mt-[14vh] xl:mt-[10vh]  flex-wrap justify-center main items-center ">
         <AnimatePresence>
           {hotel &&

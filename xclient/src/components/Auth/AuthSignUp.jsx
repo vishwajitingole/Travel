@@ -1,10 +1,8 @@
 import "./Auth.css";
 
 function AuthSignUp() {
-  const { username, email, password, number } = us;
-  function handleNumberChange() {}
   return (
-    <div className="auth-container w-[30vw]">
+    <div className="auth-container">
       <form action="">
         <div className="flex flex-col lb-in-container">
           <label htmlFor="" className="auth-label">
@@ -16,7 +14,6 @@ function AuthSignUp() {
             type="number"
             placeholder="Enter your Mobile Number"
             required
-            onChange={handleNumberChange}
           />
         </div>
         <div className="flex flex-col">
@@ -58,7 +55,7 @@ function AuthSignUp() {
             required
           />
         </div>
-        <div className="btn bg-[#FF6525] mb-2 text-center rounded text-white cta btn-login">
+        <div className="btn button">
           <button>Submit</button>
         </div>
       </form>

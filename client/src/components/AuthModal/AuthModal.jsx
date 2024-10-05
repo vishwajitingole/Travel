@@ -21,11 +21,21 @@ function AuthModal() {
 
   return (
     <div className="fixed right-0 z-50 bg-white auth-modal-container top-20">
-      <div className="flex items-center shadow-2xl auth-modal ">
-        <button className="button btn-auth" onClick={handleLoginClick}>
+      <div className="flex items-center shadow-2xl auth-modal">
+        <button
+          className={`button btn-auth ${
+            selectedTabValue === "login" ? "bg-[#FF6525]" : ""
+          }`}
+          onClick={handleLoginClick}
+        >
           Login
         </button>
-        <button className="button btn-auth" onClick={handleSignClick}>
+        <button
+          className={`button btn-auth ${
+            selectedTabValue === "signup" ? "bg-[#FF6525]" : ""
+          }`}
+          onClick={handleSignClick}
+        >
           Signup
         </button>
         <button
